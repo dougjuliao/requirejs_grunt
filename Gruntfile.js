@@ -1,16 +1,19 @@
 module.exports = function(grunt){
 	grunt.initConfig({
 		requirejs: {
-		  compile: {
-		    options: {
-		      baseUrl: "./",
-		      optimize: "uglify",
-		      mainConfigFile: "js/main.js",
-		      include: [ "js/main.js" ],
-		      out: "js/optimized.js"
+		    compile: {
+		        options: {
+		            // O local do arquivo otimizado
+		            baseUrl: "./",
+		            // Incluindo almond e main.js para adicionar ao arquivo - optimized
+		            include: ["js/libs/almond","js/main.js"],
+		            mainConfigFile: "js/main.js",
+		            // Cria arquivo otimizado
+		            out: "js/optimized.js"
+		        }
 		    }
-		  }
 		}
 	});
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
+	grunt.registerTask("default", ["requirejs"]);
 };

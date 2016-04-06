@@ -1,10 +1,10 @@
 requirejs.config({
   paths: {
-    "jquery": "libs/jquery-1.12.2.min",
-    "geral": "script"
+    "jquery": "js/libs/jquery-1.12.2.min",
+    "script": "js/script"
   }
 });
-require(["jquery"],function(){
+require(["jquery","script"],function(){
     //console.log('jQuery Rodando !!!');
-    require(["geral"]);
+    //require(["script"]);
 });
